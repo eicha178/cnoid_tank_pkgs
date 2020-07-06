@@ -28,7 +28,7 @@ items:
               class: BodyItem
               is_checked: true
               data: 
-                file: "${HOME}/catkin_ws_cnoid/src/choreonoid/share/model/Labo1/Labo1.body"
+                file: "${SHARE}/model/Labo1/Labo1.body"
                 format: CHOREONOID-BODY
                 rootPosition: [ 10, 7, 0 ]
                 rootAttitude: [ 
