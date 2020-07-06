@@ -1,0 +1,10 @@
+<launch>
+  <arg name="model" default="$(find cnoid_tank_description)/urdf/cnoid_tank.urdf.xacro"/>
+
+  <!-- robot description -->
+  <param name="/robot_description" command="$(find xacro)/xacro --inorder '$(arg model)'"/>
+   
+  <!-- rqt joint trajectory controller -->
+  <node name="rqt_joint_trajectory_controller" pkg="rqt_joint_trajectory_controller" type="rqt_joint_trajectory_controller" respawn="true"/>
+  
+</launch>
