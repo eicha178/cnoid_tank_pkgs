@@ -37,7 +37,7 @@ items:
                   0, 0, 1 ]
                 jointDisplacements: [ -1.62844e-15 ]
                 initialJointDisplacements: [ 0 ]
-                jointPositions: [ -2.84217e-17 ]
+                jointPositions: [ -2.84216e-17 ]
                 initialRootPosition: [ 10, 7, 0 ]
                 initialRootAttitude: [ 
                   -1, -1.2246468e-16, 0, 
@@ -114,7 +114,6 @@ items:
           name: "Tank"
           plugin: Body
           class: BodyItem
-          is_selected: true
           is_checked: true
           data: 
             file: "${SHARE}/cnoid_tank_bringup/model/Tank.body"
@@ -282,7 +281,6 @@ views:
       cameras: 
         - 
           camera: [ System, Perspective ]
-          isCurrent: true
           fieldOfView: 0.698132
           near: 0.01
           far: 100
@@ -294,6 +292,9 @@ views:
           orthoHeight: 20
           near: 0.01
           far: 100
+        - 
+          camera: [ Tank, Kinect ]
+          isCurrent: true
       backgroundColor: [ 0.1, 0.1, 0.3 ]
       gridColor: [ 0.9, 0.9, 0.9, 1 ]
       xzgridColor: [ 0.9, 0.9, 0.9, 1 ]
@@ -334,6 +335,16 @@ views:
     class: PythonConsoleView
     mounted: true
 toolbars: 
+  "TimeBar": 
+    minTime: 0
+    maxTime: 30
+    frameRate: 100
+    playbackFrameRate: 50
+    idleLoopDrivenMode: false
+    currentTime: 0
+    speedScale: 1
+    syncToOngoingUpdates: true
+    autoExpansion: true
   "BodyMotionGenerationBar": 
     autoGenerationForNewBody: true
     balancer: false
@@ -367,16 +378,6 @@ toolbars:
     waistHeightRelaxation: false
     gravity: 9.8
     dynamicsTimeRatio: 1
-  "TimeBar": 
-    minTime: 0
-    maxTime: 30
-    frameRate: 100
-    playbackFrameRate: 50
-    idleLoopDrivenMode: false
-    currentTime: 6.57
-    speedScale: 1
-    syncToOngoingUpdates: true
-    autoExpansion: true
   "LeggedBodyBar": 
     stanceWidth: 0.15
   "KinematicsBar": 
@@ -433,7 +434,7 @@ viewAreas:
         - 
           type: splitter
           orientation: vertical
-          sizes: [ 558, 379 ]
+          sizes: [ 554, 377 ]
           children: 
             - 
               type: pane
@@ -445,7 +446,7 @@ viewAreas:
         - 
           type: splitter
           orientation: vertical
-          sizes: [ 680, 257 ]
+          sizes: [ 676, 255 ]
           children: 
             - 
               type: splitter
@@ -455,7 +456,7 @@ viewAreas:
                 - 
                   type: pane
                   views: [ 5, 6, 4 ]
-                  current: 5
+                  current: 4
                 - 
                   type: pane
                   views: [ 3 ]
